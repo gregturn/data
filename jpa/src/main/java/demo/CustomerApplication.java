@@ -1,7 +1,8 @@
 package demo;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
@@ -11,7 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
  * @author Kenny Bastani
  * @author Josh Long
  */
-@SpringBootApplication
+@SpringCloudApplication
+@EnableFeignClients
 @EnableJpaAuditing
 public class CustomerApplication {
     public static void main(String[] args) {

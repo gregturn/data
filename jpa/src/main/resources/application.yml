@@ -1,6 +1,19 @@
 spring:
+  application:
+    name: ${vcap.application.name:cloud-native-java-jpa}
   profiles:
     active: development
+
+server:
+  port: 0  # Spring Boot randomly assigns a port number
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    hostname: ${vcap.application.uris[0]:localhost}
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
 ---
 spring:
   profiles: development
