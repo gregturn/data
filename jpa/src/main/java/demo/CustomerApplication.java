@@ -1,9 +1,13 @@
 package demo;
 
+import feign.RequestInterceptor;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
@@ -18,7 +22,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableFeignClients
 @EnableJpaAuditing
 public class CustomerApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(CustomerApplication.class, args);
     }
+
 }
