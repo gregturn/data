@@ -1,12 +1,9 @@
 spring:
   application:
     name: ${vcap.application.name:cloud-native-java-mongodb}
-  data:
-    rest:
-      basePath: /api
 
 server:
-  port: 0  # Spring Boot randomly assigns a port number
+  port: 9000  # Spring Boot randomly assigns a port number
 
 eureka:
   instance:

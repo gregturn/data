@@ -1,17 +1,19 @@
 package demo.order;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.Resource;
-import org.springframework.hateoas.Resources;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient("cloud-native-java-mongodb")
+@RibbonClient()
 public interface OrderRepository {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/orders")
-	Resources<Resource<Order>> findAll();
+	PagedResources<Resource<Order>> findAll();
 
 	@RequestMapping(method = RequestMethod.POST, value = "/orders", consumes = MediaType.APPLICATION_JSON_VALUE)
 	<S extends Order> S save(S entity);

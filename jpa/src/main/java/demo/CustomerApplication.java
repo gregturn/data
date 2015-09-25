@@ -2,6 +2,7 @@ package demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
@@ -13,6 +14,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
  * @author Josh Long
  */
 @SpringCloudApplication
+@EnableEurekaClient
 @EnableFeignClients
 @EnableJpaAuditing
 public class CustomerApplication {

@@ -20,4 +20,23 @@ package demo.order;
  */
 public class Order {
 
+	private Long lastModified, createdAt;
+
+	protected Order() {}
+
+	public Long getLastModified() {
+		return lastModified;
+	}
+
+	public void setLastModified(Long lastModified) {
+		this.lastModified = lastModified;
+	}
+
+	public Long getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Long createdAt) {
+		this.createdAt = createdAt;
+	}
 }
